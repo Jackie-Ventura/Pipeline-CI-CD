@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [ main ]
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,9 +36,11 @@ jobs:
       - name: Lighthouse Audit
         uses: treosh/lighthouse-ci-action@v12
         with:
-          staticDistDir: './site'
-          budgetPath: ./budget.json
+          urls: |
+            http://localhost:8080/index.html
           uploadArtifacts: true
+          temporaryPublicStorage: true
+          configPath: './.lighthouserc.json'
 
       - name: Gerar Artefato do Site
         uses: actions/upload-artifact@v4

@@ -1,0 +1,10 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./site"
+    },
+    "assert": {
+      "budgetsFile": "./budget.json"
+    }
+  }
+}
