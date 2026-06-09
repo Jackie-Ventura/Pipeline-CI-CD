@@ -1,5 +1,8 @@
 # Projeto CI/CD Automatizado com GitHub Actions 🚀
 
+![CI Status](https://github.com/Jackie-Ventura/Pipeline-CI-CD/actions/workflows/ci.yml/badge.svg)
+![CD Status](https://github.com/Jackie-Ventura/Pipeline-CI-CD/actions/workflows/cd.yml/badge.svg)
+
 Este repositório foi desenvolvido como parte de uma atividade prática de DevOps, com o objetivo de criar, configurar e validar um pipeline de CI/CD completo utilizando Git, GitHub e GitHub Actions.
 
 ## 🔗 Link do Projeto
