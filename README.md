@@ -30,6 +30,8 @@ O projeto segue a estrutura organizacional abaixo:
 │       └── cd.yml    # Pipeline de Deploy Contínuo (GitHub Pages)
 ├── site/
 │   └── index.html    # Página estática simples
+├── .lighthouserc.json # Configuração do Lighthouse CI
+├── budget.json        # Limites de performance e qualidade
 └── README.md         # Documentação do projeto
 ```
 
