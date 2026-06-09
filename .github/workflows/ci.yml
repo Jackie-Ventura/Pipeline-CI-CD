@@ -30,16 +30,14 @@ jobs:
           echo "Validação de tag <title> concluída."
 
       - name: HTML Hint (Lint)
-        uses: htmlhint/htmlhint-action@v2
-        with:
-          bundle-assets: true
-          path: 'site/index.html'
+        run: |
+          npx htmlhint "site/*.html"
 
-      - name: Check Broken Links
+      - name: Lighthouse Audit
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: 'site/index.html'
-          budgetPath: ./budget.json # Criaremos este arquivo a seguir
+          budgetPath: ./budget.json
           uploadArtifacts: true
 
       - name: Gerar Artefato do Site
