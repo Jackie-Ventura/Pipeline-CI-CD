@@ -29,6 +29,19 @@ jobs:
           grep -q "<title>" site/index.html
           echo "Validação de tag <title> concluída."
 
+      - name: HTML Hint (Lint)
+        uses: htmlhint/htmlhint-action@v2
+        with:
+          bundle-assets: true
+          path: 'site/index.html'
+
+      - name: Check Broken Links
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: 'site/index.html'
+          budgetPath: ./budget.json # Criaremos este arquivo a seguir
+          uploadArtifacts: true
+
       - name: Gerar Artefato do Site
         uses: actions/upload-artifact@v4
         with:

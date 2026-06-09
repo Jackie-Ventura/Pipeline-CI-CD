@@ -37,6 +37,26 @@ O projeto segue a estrutura organizacional abaixo:
 
 ## ⚙️ Funcionamento dos Pipelines
 
+### Fluxo de Trabalho (Pipeline Architecture)
+```mermaid
+graph TD
+    A[Desenvolvedor: git push] --> B{GitHub Actions}
+    B --> C[Job: CI - Integração Contínua]
+    subgraph CI
+        C --> C1[HTML Linting]
+        C1 --> C2[Link Checker]
+        C2 --> C3[Geração de Artefatos]
+    end
+    C3 --> D{Sucesso?}
+    D -- Sim --> E[Job: CD - Deploy Contínuo]
+    D -- Não --> F[Notificação de Erro/Falha]
+    subgraph CD
+        E --> E1[Build/Upload Pages]
+        E1 --> E2[Deploy para Produção]
+    end
+    E2 --> G[Site Online: GitHub Pages]
+```
+
 ### 1. CI - Integração Contínua (`ci.yml`)
 Disparado em cada `push` ou `pull request` para a branch `main`.
 - **Checkout:** Obtém o código do repositório.

@@ -1,0 +1,16 @@
+[
+  {
+    "resourceSizes": [
+      {
+        "resourceType": "total",
+        "budget": 500000
+      }
+    ],
+    "resourceCounts": [
+      {
+        "resourceType": "third-party",
+        "budget": 0
+      }
+    ]
+  }
+]
