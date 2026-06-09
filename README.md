@@ -61,7 +61,8 @@ graph TD
 Disparado em cada `push` ou `pull request` para a branch `main`.
 - **Checkout:** Obtém o código do repositório.
 - **Validação:** Verifica a integridade do arquivo `index.html`.
-- **Lint Simples:** Garante que as tags HTML essenciais existam.
+- **HTML Hint (Lint):** Analisa a sintaxe do HTML para garantir que segue as melhores práticas e padrões.
+- **Lighthouse CI (Audit):** Realiza uma auditoria automática de performance, acessibilidade e links quebrados usando a tecnologia do Google Lighthouse.
 - **Artefato:** Gera e armazena um arquivo comprimido do site para auditoria.
 
 ### 2. CD - Deploy Contínuo (`cd.yml`)
